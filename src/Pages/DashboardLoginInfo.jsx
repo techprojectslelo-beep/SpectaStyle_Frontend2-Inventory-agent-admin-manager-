@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/LoginInfo.css";
+import { API_URL } from "../config";
 
 const DashboardLoginInfo = () => {
   const navigate = useNavigate();
@@ -89,7 +90,7 @@ const DashboardLoginInfo = () => {
           <h3>Quick Links:</h3>
           <ul>
             <li><strong>Dashboard:</strong> http://localhost:3000</li>
-            <li><strong>Backend API:</strong> http://localhost:5500</li>
+             <li><strong>Backend API:</strong> {API_URL}</li>
           </ul>
           <h3>Instructions:</h3>
           <ul>

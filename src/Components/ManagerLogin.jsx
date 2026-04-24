@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import axios from "axios";
 import Errors from "../Components/Errors";
 import "../css/ManagerLogin.css";
+import { API_BASE_URL } from "../config";
 
 const ManagerLogin = () => {
   const [error, setError] = useState(null);
@@ -37,7 +38,7 @@ const ManagerLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/ecommerce/manager/login",
+        `${API_BASE_URL}/manager/login`,
         {
           name,
           password,
@@ -61,7 +62,7 @@ const ManagerLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/ecommerce/agent/signup",
+        `${API_BASE_URL}/agent/signup`,
         {
           agentName,
           agentPassword,

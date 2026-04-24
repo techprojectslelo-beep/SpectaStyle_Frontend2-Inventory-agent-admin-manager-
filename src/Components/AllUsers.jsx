@@ -1,6 +1,7 @@
 import { Fragment, useState, useEffect } from 'react';
 import axios from 'axios'; // Import Axios
 import '../css/AllUsers.css';
+import { API_BASE_URL } from '../config';
 
 const AllUsers = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +10,7 @@ const AllUsers = () => {
     // Fetch all users
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5500/ecommerce/user'); // Make sure the URL is correct
+        const response = await axios.get(`${API_BASE_URL}/user`); // Make sure the URL is correct
         setUsers(response.data.users);
       } catch (error) {
         console.error('Error fetching users:', error);

@@ -1,13 +1,14 @@
 import { Fragment, useEffect, useState } from 'react';
 import axios from 'axios';
 import '../css/AllAgents.css';
+import { API_BASE_URL } from '../config';
 
 const AllAgents = () => {
   const [agents, setAgents] = useState([]);
   
   useEffect(() => {
     // Fetch re api for all agents
-    axios.get('http://localhost:5500/ecommerce/agent')
+    axios.get(`${API_BASE_URL}/agent`)
       .then((response) => {
         setAgents(response.data);
       })

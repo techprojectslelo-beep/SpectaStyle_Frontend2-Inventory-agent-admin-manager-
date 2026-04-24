@@ -5,6 +5,7 @@ import Errors from "../Components/Errors";
 import "../css/MainDashboardLogin.css";
 import { useDispatch } from "react-redux";
 import { login } from "../actions/authActions";
+import { API_BASE_URL } from "../config";
 
 const MainDashboardLogin = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const MainDashboardLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/ecommerce/agent/login",
+        `${API_BASE_URL}/agent/login`,
         {
           agentName,
           agentPassword,
@@ -79,6 +80,9 @@ const MainDashboardLogin = () => {
             />
           </div>
           <button type="submit">Login</button>
+          <p>Agent: Agent Smith, PassWord: agent123</p>
+          <p>Name: Admin One, Password: admin123</p>
+          <p>Name: Manager Two, Password: manager123</p>
         </form>
         {error && <Errors message={error} onClose={closeError} />}
       </div>

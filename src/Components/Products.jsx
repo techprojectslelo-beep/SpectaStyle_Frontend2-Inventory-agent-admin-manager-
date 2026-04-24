@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import "../css/Products.css";
 import Errors from "../Components/Errors";
 import axios from "axios";
+import { API_BASE_URL } from "../config";
 
 const Products = () => {
 
@@ -33,7 +34,7 @@ const Products = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5500/ecommerce/product/products",
+        `${API_BASE_URL}/product/products`,
         formData
       );
 
